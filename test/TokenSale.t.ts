@@ -10,7 +10,7 @@ const TEST_BUY_AMOUNT = "10";
 async function fixture() {
   const publicClient = await viem.getPublicClient();
   const myTokenContract = await viem.deployContract("MyToken", []);
-  const myNftContract = await viem.deployContract("MyNFT", []);
+  const myNftContract = await viem.deployContract("MyNft", []);
   const tokenSaleContract = await viem.deployContract("TokenSale", [
     TEST_RATIO,
     TEST_PRICE,
@@ -40,10 +40,16 @@ async function fixture() {
 
 describe("NFT Shop", async () => {
   describe("When the Shop contract is deployed", async () => {
-    it("defines the ratio as provided in parameters", async () => {
+    it.only("defines the ratio as provided in parameters", async () => {
+      const {tokenSaleContract} = await loadFixture(fixture);
+      const ratio = await tokenSaleContract.read.ratio();
+      expect(ratio).to.eq(TEST_RATIO);
       
     });
-    it("defines the price as provided in parameters", async () => {
+    it.only("defines the price as provided in parameters", async () => {
+      const {tokenSaleContract} = await loadFixture(fixture);
+      const price = await tokenSaleContract.read.price();
+      expect(price).to.eq(TEST_PRICE);
       
     });
     it("uses a valid ERC20 as payment token", async () => {
