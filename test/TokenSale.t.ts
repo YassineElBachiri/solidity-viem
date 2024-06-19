@@ -117,7 +117,11 @@ describe("NFT Shop", async () => {
     it("gives the correct amount of ERC20 tokens", async () => {});
   });
   describe("When the owner withdraws from the Shop contract", async () => {
-    it("recovers the right amount of ERC20 tokens", async () => {});
-    it("updates the owner pool account correctly", async () => {});
+    it("recovers the right amount of ERC20 tokens", async () => {
+      throw new Error("Not implemented");
+    });
+    it("updates the owner pool account correctly", async () => {
+      throw new Error("Not implemented");
+    });
   });
 });
