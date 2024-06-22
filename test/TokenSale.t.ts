@@ -110,7 +110,9 @@ describe("NFT Shop", async () => {
     it("burns the correct amount of tokens", async () => {});
   });
   describe("When a user buys an NFT from the Shop contract", async () => {
-    it("charges the correct amount of ERC20 tokens", async () => {});
+    it("charges the correct amount of ERC20 tokens", async () => {
+      throw new Error("Not implemented");
+    });
     it("gives the correct NFT", async () => {
       throw new Error("Not implemented");
     });
