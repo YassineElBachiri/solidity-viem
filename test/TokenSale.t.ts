@@ -106,7 +106,57 @@ describe("NFT Shop", async () => {
     it("gives the correct amount of tokens", async () => {});
   });
   describe("When a user burns an ERC20 at the Shop contract", async () => {
-    it("gives the correct amount of ETH", async () => {});
+    it("gives the correct amount of ETH", async () => {
+       // First I'll need to buy an ERC20 token
+      // Then I'll burn it by sending to address 0
+      // I should get the ETH back
+      // check initial bal, bal after buying, bal after
+      const { publicClient, tokenSaleContract, myTokenContract, deployer } =
+        await loadFixture(fixture);
+
+      const initialEthBalance = await publicClient.getBalance({
+        address: deployer.account.address,
+      });
+
+      // deployer buys tokens
+      await tokenSaleContract.write.buyTokens({
+        value: parseEther(TEST_BUY_AMOUNT),
+      });
+
+      // deployer balance should have decreased
+      const deployerEthBalance = await publicClient.getBalance({
+        address: deployer.account.address,
+      });
+
+      // Allow <1st argument> to use <2nd argument> amount of caller's money
+      const hash1 = await myTokenContract.write.approve([
+        tokenSaleContract.address,
+        parseEther(TEST_BUY_AMOUNT),
+      ]);
+      const receipt1 = await publicClient.getTransactionReceipt({
+        hash: hash1,
+      });
+      const txFees1 = receipt1.gasUsed * receipt1.effectiveGasPrice;
+
+      //! Before we can burn. we need to allocate allowance
+      const hash = await tokenSaleContract.write.returnTokens([
+        parseEther(TEST_BUY_AMOUNT),
+      ]);
+      const receipt = await publicClient.getTransactionReceipt({ hash });
+      const txFees = receipt.gasUsed * receipt.effectiveGasPrice;
+
+      // balance after burning
+      // since I get some Eth back this should be greater than deployerEthBalance1
+      const deployerEthBalance2 = await publicClient.getBalance({
+        address: deployer.account.address,
+      });
+
+      const diff = deployerEthBalance2 - deployerEthBalance; // this diff is the amount of ETH returned
+      const expected_diff =
+        parseEther(TEST_BUY_AMOUNT) / TEST_RATIO - (txFees + txFees1);
+      // Expect
+      expect(diff).to.eq(expected_diff); // possibly + tax fees
+    });
     it("burns the correct amount of tokens", async () => {
        // call the tokencontract to approve amount to the token sale contract
       // call the tokensalecontract for return tokens function
