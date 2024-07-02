@@ -110,7 +110,7 @@ describe("NFT Shop", async () => {
        // First I'll need to buy an ERC20 token
       // Then I'll burn it by sending to address 0
       // I should get the ETH back
-      // check initial bal, bal after buying, bal after
+     
       const { publicClient, tokenSaleContract, myTokenContract, deployer } =
         await loadFixture(fixture);
 
