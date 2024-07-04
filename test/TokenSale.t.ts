@@ -103,7 +103,26 @@ describe("NFT Shop", async () => {
        expect(diff).to.be.eq(expected_diff);
     });
 
-    it("gives the correct amount of tokens", async () => {});
+    it("gives the correct amount of tokens", async () => {
+      const { tokenSaleContract, myTokenContract, deployer, acc1, acc2 } =
+      await loadFixture(fixture);
+
+    // Initial _balance[address] of acc 1 should be 0
+    const tokenBalanceBefore = await myTokenContract.read.balanceOf([
+      acc1.account.address,
+    ]);
+
+    // acc 1 buys tokens
+    const tx = await tokenSaleContract.write.buyTokens({
+      value: parseEther(TEST_BUY_AMOUNT),
+      account: acc1.account.address,
+    });
+    const tokenBalanceAfter = await myTokenContract.read.balanceOf([
+      acc1.account.address,
+    ]);
+    const diff = tokenBalanceAfter - tokenBalanceBefore;
+    expect(diff).to.be.eq(parseEther(TEST_BUY_AMOUNT) * TEST_RATIO);
+    });
   });
   describe("When a user burns an ERC20 at the Shop contract", async () => {
     it("gives the correct amount of ETH", async () => {
