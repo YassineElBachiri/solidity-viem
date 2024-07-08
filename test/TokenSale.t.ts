@@ -112,7 +112,7 @@ describe("NFT Shop", async () => {
       acc1.account.address,
     ]);
 
-    // acc 1 buys tokens
+    // acc 1 buys tokens nnn
     const tx = await tokenSaleContract.write.buyTokens({
       value: parseEther(TEST_BUY_AMOUNT),
       account: acc1.account.address,
