@@ -118,6 +118,7 @@ describe("NFT Shop", async () => {
       value: parseEther(TEST_BUY_AMOUNT),
       account: acc1.account.address,
     });
+    // token balance after
     const tokenBalanceAfter = await myTokenContract.read.balanceOf([
       acc1.account.address,
     ]);
