@@ -111,8 +111,7 @@ describe("NFT Shop", async () => {
     const tokenBalanceBefore = await myTokenContract.read.balanceOf([
       acc1.account.address,
     ]);
-    // jksdjfks
- // ghghhghghg
+    
     // acc 1 buys tokens nnn
     const tx = await tokenSaleContract.write.buyTokens({
       value: parseEther(TEST_BUY_AMOUNT),
@@ -122,6 +121,7 @@ describe("NFT Shop", async () => {
     const tokenBalanceAfter = await myTokenContract.read.balanceOf([
       acc1.account.address,
     ]);
+    // jhjhgyufyu
     const diff = tokenBalanceAfter - tokenBalanceBefore;
     expect(diff).to.be.eq(parseEther(TEST_BUY_AMOUNT) * TEST_RATIO);
     });
