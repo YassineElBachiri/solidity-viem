@@ -149,6 +149,8 @@ describe("NFT Shop", async () => {
         address: deployer.account.address,
       });
 
+      ///  mmccv
+
       // Allow <1st argument> to use <2nd argument> amount of caller's money
       const hash1 = await myTokenContract.write.approve([
         tokenSaleContract.address,
