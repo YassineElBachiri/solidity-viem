@@ -253,6 +253,7 @@ describe("NFT Shop", async () => {
       throw new Error("Not implemented");
     });
     it("updates the owner pool account correctly", async () => {
+      // check the code
       throw new Error("Not implemented");
     });
   });
