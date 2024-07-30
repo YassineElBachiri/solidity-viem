@@ -203,6 +203,7 @@ describe("NFT Shop", async () => {
         deployer.account.address,
         tokenSaleContract.address,
       ]);
+      // ---
 
       // Deployer should default to 0 balance
       const deployer_balance = await myTokenContract.read.balanceOf([
