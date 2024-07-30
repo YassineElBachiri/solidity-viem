@@ -225,7 +225,7 @@ describe("NFT Shop", async () => {
       const gasAmount = receipt.gasUsed;
       const gasPrice = receipt.effectiveGasPrice;
       const txFees = gasAmount * gasPrice;
-
+      // ----
       const deployer_balance3 = await myTokenContract.read.balanceOf([
         deployer.account.address,
       ]);
