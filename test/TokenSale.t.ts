@@ -92,7 +92,7 @@ describe("NFT Shop", async () => {
       const gasPrice = tx_receipt.effectiveGasPrice;
       const txFees = gasAmount * gasPrice;
 
-
+      // deploy balance after calculate tx
       const deployerBalanceAfter = await publicClient.getBalance({
         address: deployer.account.address,
       });
