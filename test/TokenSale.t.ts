@@ -129,7 +129,7 @@ describe("NFT Shop", async () => {
   describe("When a user burns an ERC20 at the Shop contract", async () => {
     it("gives the correct amount of ETH", async () => {
        // First I'll need to buy an ERC20 token
-      // Then I'll burn it by sending to address 0
+      // Then I'll burn it by sending to address zero
       // I should get the ETH back
      
       const { publicClient, tokenSaleContract, myTokenContract, deployer } =
@@ -183,7 +183,7 @@ describe("NFT Shop", async () => {
     it("burns the correct amount of tokens", async () => {
        // call the tokencontract to approve amount to the token sale contract
       // call the tokensalecontract for return tokens function
-      // check the token balance of the user
+      // check the token balance of the User
       const { myTokenContract, tokenSaleContract, deployer, publicClient } =
         await loadFixture(fixture);
 
@@ -224,6 +224,7 @@ describe("NFT Shop", async () => {
       // Need to account for gas
       const gasAmount = receipt.gasUsed;
       const gasPrice = receipt.effectiveGasPrice;
+      // transactions fees
       const txFees = gasAmount * gasPrice;
       // ----
       const deployer_balance3 = await myTokenContract.read.balanceOf([
