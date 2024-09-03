@@ -36,14 +36,14 @@ git clone https://github.com/YassineElBachiri/solidity-viem.git
 
 
 2. Install dependencies:
-```npm install``` 
+    ```npm install
 
 
 3. Set up your environment variables:
    - Create a `.env` file in the root directory
-   - Add your Alchemy API key and private key:
-     ```
-ALCHEMY_API_KEY=your-alchemy-api-key PRIVATE_KEY=your-private-key
+   - Add your Alchemy API key and private key
+
+        ALCHEMY_API_KEY=your-alchemy-api-key PRIVATE_KEY=your-private-key
 
 
 ## Usage
