@@ -40,16 +40,16 @@ async function fixture() {
 
 describe("NFT Shop", async () => {
   describe("When the Shop contract is deployed", async () => {
-    it("defines the ratio as provided in parameters", async () => {
-      const { tokenSaleContract } = await loadFixture(fixture);
-      const ratio = await tokenSaleContract.read.ratio();
-      expect(ratio).to.eq(TEST_RATIO);
-    });
-    it("defines the price as provided in parameters", async () => {
-      const { tokenSaleContract } = await loadFixture(fixture);
-      const price = await tokenSaleContract.read.price();
-      expect(price).to.eq(TEST_PRICE);
-    });
+  it("defines the ratio as provided in parameters", async () => {
+    const { tokenSaleContract } = await loadFixture(fixture);
+    const ratio = await tokenSaleContract.read.ratio();
+    expect(ratio).to.eq(TEST_RATIO);
+  });
+  it("defines the price as provided in parameters", async () => {
+    const { tokenSaleContract } = await loadFixture(fixture);
+    const price = await tokenSaleContract.read.price();
+    expect(price).to.eq(TEST_PRICE);
+  });
     it("uses a valid ERC20 as payment token", async () => {
       const { tokenSaleContract } = await loadFixture(fixture);
       const paymentTokenAddress = await tokenSaleContract.read.paymentToken();

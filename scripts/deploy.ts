@@ -41,14 +41,14 @@ async function main() {
   });
   console.log("Deployer address:", deployer.account.address);
 
-//   const balance = await publicClient.getBalance({
-//     address: deployer.account.address,
-//   });
-//   console.log(
-//     "Deployer balance:",
-//     formatEther(balance),
-//     deployer.chain.nativeCurrency.symbol
-//   );
+  const balance = await publicClient.getBalance({
+    address: deployer.account.address,
+  });
+  console.log(
+    "Deployer balance:",
+    formatEther(balance),
+    deployer.chain.nativeCurrency.symbol
+  );
 
   console.log("\nDeploying Ballot contract");
   const hash = await deployer.deployContract({
