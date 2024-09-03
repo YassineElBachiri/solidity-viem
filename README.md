@@ -32,12 +32,12 @@ src/ ├── contracts/ # Solidity source files └── types/ # TypeScript 
 ## Installation
 
 1. Clone the repository:
-  ```git clone https://github.com/YassineElBachiri/solidity-viem.git
+  ``` git clone https://github.com/YassineElBachiri/solidity-viem.git ```
 
 
 2. Install dependencies:
 
-    ```npm install
+    ```npm install ```
 
 
 3. Set up your environment variables:
