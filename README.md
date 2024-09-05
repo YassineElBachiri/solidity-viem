@@ -19,8 +19,15 @@ This project demonstrates how to deploy and test smart contracts on Ethereum-com
 This repository showcases a collection of smart contracts deployed and tested using Viem, a TypeScript library for interacting with Ethereum-compatible blockchains. The project includes various contract implementations, deployment scripts, and comprehensive tests written in TypeScript.
 
 ## Project Structure
-src/ ├── contracts/ # Solidity source files └── types/ # TypeScript type definitions test/ ├── Ballot.t.ts # Test file for Ballot contract ├── EventTest.t.ts # Test file for event handling └── TokenSale.t.ts # Test file for token sale functionality scripts/ └── deploy.ts # Script for deploying contracts package.json # Project dependencies hardhat.config.ts # Hardhat configuration README.md # This file
 
+src/
+├── contracts/ # Solidity source files
+└── types/ # TypeScript type definitions
+test/
+├── Ballot.t.ts # Test file for Ballot contract
+├── EventTest.t.ts # Test file for event handling
+└── TokenSale.t.ts # Test file for token sale functionality scripts/
+└── deploy.ts # Script for deploying contracts package.json # Project dependencies hardhat.config.ts # Hardhat configuration README.md # This file
 
 ## Requirements
 
@@ -32,32 +39,29 @@ src/ ├── contracts/ # Solidity source files └── types/ # TypeScript 
 ## Installation
 
 1. Clone the repository:
-   ```
-   git clone https://github.com/YassineElBachiri/solidity-viem.git 
-   ```
 
+   ```
+   git clone https://github.com/YassineElBachiri/solidity-viem.git
+   ```
 
 2. Install dependencies:
 
-    ```
-    npm install 
-    ```
-
+   ```
+   npm install
+   ```
 
 3. Set up your environment variables:
    - Create a `.env` file in the root directory
    - Add your Alchemy API key and private key
-        ```
-        ALCHEMY_API_KEY=your-alchemy-api-key PRIVATE_KEY=your-private-key
-        ```
-
+     ```
+     ALCHEMY_API_KEY=your-alchemy-api-key PRIVATE_KEY=your-private-key
+     ```
 
 ## Usage
 
 To deploy the contracts:
 
 npx hardhat run scripts/deploy.ts --network sepolia
-
 
 Replace `sepolia` with your desired network (e.g., mainnet, goerli).
 
@@ -68,7 +72,6 @@ Run the tests:
 ```
 npx hardhat test
 ```
-
 
 ## Contracts Overview
 
