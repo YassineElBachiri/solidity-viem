@@ -27,7 +27,10 @@ test/
 ├── Ballot.t.ts # Test file for Ballot contract
 ├── EventTest.t.ts # Test file for event handling
 └── TokenSale.t.ts # Test file for token sale functionality scripts/
-└── deploy.ts # Script for deploying contracts package.json # Project dependencies hardhat.config.ts # Hardhat configuration README.md # This file
+└── deploy.ts # Script for deploying contracts
+package.json # Project dependencies
+hardhat.config.ts # Hardhat configuration
+README.md # This file
 
 ## Requirements
 
