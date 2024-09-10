@@ -66,7 +66,7 @@ To deploy the contracts:
 
 npx hardhat run scripts/deploy.ts --network sepolia
 
-Replace `sepolia` with your desired network (e.g., mainnet, goerli).
+Replace `sepolia` with your desired network (e.g., mainnet, arbitrum-sepolia).
 
 ## Testing
 
